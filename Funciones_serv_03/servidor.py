@@ -16,15 +16,23 @@ def _runservidor():
     servidor.listen(1)
     print(f"Servidor escuchando en : {IP_SERVER}:{PORT}")
     while True:
-        conx, addr = servidor.accept()
-        print(f"Conexión aceptada :-> {addr}")
-        while True:
-            data = conx.recv(1024)
-            if not data:
-                break
-            resultado = math_eval(data.decode())
-            conx.sendall(str(resultado).encode())
-        conx.close()
+        try:
+            conx, addr = servidor.accept()
+            print(f"Conexión aceptada :-> {addr}")
+            while True:
+                try:
+                    data = conx.recv(1024)
+                    if not data:
+                        break
+                    resultado = math_eval(data.decode())
+                    conx.sendall(str(resultado).encode())
+                except Exception as e:
+                    print(f"Error: {e}")
+            print("[Conexión cerrada]")
+            conx.close()
+            break
+        except Exception as e:
+            print(f"Error: {e}")
 
 if __name__ == '__main__':
     _runservidor()
