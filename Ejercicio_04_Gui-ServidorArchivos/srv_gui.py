@@ -7,7 +7,7 @@ from tkinter import messagebox, scrolledtext
 # Variables globales
 is_running = False
 server_socket = None
-IP_SERVER = '192.168.100.37'
+IP_SERVER = '192.168.29.247'
 PORT = 9220
 
 

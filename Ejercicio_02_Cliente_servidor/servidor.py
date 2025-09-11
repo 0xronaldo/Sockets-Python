@@ -3,7 +3,7 @@
 
 import socket
 
-IP_SERVER = '192.168.100.37'
+IP_SERVER = '192.168.29.247'
 PORT = 9220
 
 def operacion(lista):

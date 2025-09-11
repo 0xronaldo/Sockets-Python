@@ -3,10 +3,11 @@
 import socket
 import select
 
-IP_SERVER = '192.168.100.37'
-PORT = 9220
+IP_SERVER = "192.168.29.247"
+PORT = 9200
 
 servidor = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+servidor.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 servidor.bind((IP_SERVER, PORT))
 servidor.listen(2)
 print(f"Servidor escuchando en {IP_SERVER}:{PORT}...")

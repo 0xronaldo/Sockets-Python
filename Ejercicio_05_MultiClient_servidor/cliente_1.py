@@ -5,7 +5,7 @@
 
 import socket
 
-IP_SERVER = '192.168.100.37'
+IP_SERVER = '192.168.29.247'
 PUERTO = 9220
 cliente = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 cliente.connect((IP_SERVER, PUERTO))
